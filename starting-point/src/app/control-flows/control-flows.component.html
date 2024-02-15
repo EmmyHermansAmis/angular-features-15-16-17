@@ -1,0 +1,40 @@
+<h1 class="title">Control Flows</h1>
+<p class="explanation">
+  Rewrite the html of this component to use the new template control flow
+  instead of the structural directives *ngIf, *ngFor and *ngSwitch
+</p>
+<div class="row">
+  <section>
+    <h2>If</h2>
+    <button (click)="fruit = 'apple'" class="green">Make apple</button>
+    <button (click)="fruit = 'banana'" class="yellow">Make banana</button>
+    <p *ngIf="fruit === 'apple'; else notApple" class="green">Apple</p>
+    <ng-template #notApple>
+      <p *ngIf="fruit === 'banana'; else other" class="yellow">Banana</p>
+      <ng-template #other>
+        <p class="red">Not an apple or a banana</p>
+      </ng-template>
+    </ng-template>
+  </section>
+
+  <section>
+    <h2>For</h2>
+    <ng-container *ngIf="fruits.length > 0; else noFruits">
+      <p *ngFor="let frt of fruits">{{ frt }}</p>
+    </ng-container>
+    <ng-template #noFruits><p>No fruits</p></ng-template>
+  </section>
+
+  <section>
+    <h2>Switch</h2>
+    <button (click)="fruit2 = 'apple'" class="green">Make apple</button>
+    <button (click)="fruit2 = 'banana'" class="yellow">Make banana</button>
+    <button (click)="fruit2 = 'orange'" class="orange">Make orange</button>
+    <ng-container [ngSwitch]="fruit2">
+      <p *ngSwitchCase="'apple'" class="green">Apple</p>
+      <p *ngSwitchCase="'banana'" class="yellow">Banana</p>
+      <p *ngSwitchCase="'orange'" class="orange">Orange</p>
+      <p *ngSwitchDefault class="red">Not an apple or a banana</p>
+    </ng-container>
+  </section>
+</div>

@@ -1,0 +1,15 @@
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 5rem 2rem;
+  max-width: 1000px;
+}
+
+.title {
+  margin-left: 5rem;
+}
+
+.explanation {
+  margin-left: 5rem;
+}

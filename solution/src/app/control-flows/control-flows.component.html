@@ -1,0 +1,43 @@
+<h1 class="title">Control Flows</h1>
+<div class="row">
+  <section>
+    <h2>If</h2>
+    <button (click)="fruit = 'apple'" class="green">Make apple</button>
+    <button (click)="fruit = 'banana'" class="yellow">Make banana</button>
+    @if (fruit === "apple") {
+      <p class="green">Apple</p>
+    } @else if (fruit === "banana") {
+      <p class="yellow">Banana</p>
+    } @else {
+      <p class="red">Not an apple or a banana</p>
+    }
+  </section>
+  <section>
+    <h2>For</h2>
+    @for (frt of fruits; track $index) {
+      <p>{{ frt }}</p>
+    } @empty {
+      <p>No fruits</p>
+    }
+  </section>
+  <section>
+    <h2>Switch</h2>
+    <button (click)="fruit2 = 'apple'" class="green">Make apple</button>
+    <button (click)="fruit2 = 'banana'" class="yellow">Make banana</button>
+    <button (click)="fruit2 = 'orange'" class="orange">Make orange</button>
+    @switch (fruit2) {
+      @case ("apple") {
+        <p class="green">Apple</p>
+      }
+      @case ("banana") {
+        <p class="yellow">Banana</p>
+      }
+      @case ("orange") {
+        <p class="orange">Orange</p>
+      }
+      @default {
+        <p class="red">Not an apple or a banana</p>
+      }
+    }
+  </section>
+</div>

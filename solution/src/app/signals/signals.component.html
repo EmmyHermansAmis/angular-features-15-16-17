@@ -1,0 +1,51 @@
+<h1 class="title">Signals</h1>
+<div class="explanation">
+  <ul>
+    <li>Implement the area calculation using signals and computed.</li>
+    <li>Change the person to a signal and update in the correct way.</li>
+    <li>
+      Implement the counter as a signal and use the update method to add to the
+      counter.
+    </li>
+    <li>
+      Add an effect in the constructor that responds to changes of one or more
+      of the signals.
+    </li>
+  </ul>
+</div>
+<div class="row">
+  <section>
+    <h2>Calculate Area</h2>
+    <div class="form">
+      <label>height</label>
+      <input
+        type="number"
+        [ngModel]="height()"
+        (ngModelChange)="height.set($event)"
+      />
+    </div>
+    <div class="form">
+      <label>width</label>
+      <input
+        type="number"
+        [ngModel]="width()"
+        (ngModelChange)="width.set($event)"
+      />
+    </div>
+    <p>Area : {{ area() }}</p>
+  </section>
+  <section>
+    <h2>Change property of object</h2>
+    <div class="form">
+      <label>name</label>
+      <input [(ngModel)]="name" />
+    </div>
+    <button (click)="changeName()">Click</button>
+    <p>Person : {{ person() | json }}</p>
+  </section>
+  <section>
+    <h2>Add to counter</h2>
+    <button (click)="addToCounter()">Add to counter</button>
+    <p>Counter : {{ counter() }}</p>
+  </section>
+</div>

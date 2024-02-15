@@ -1,0 +1,15 @@
+<h1 class="title">Deferrable views</h1>
+<p>
+  Make sure the app-lazy-loaded component below is lazy loaded with a deferrable
+  view. The component should be loaded after waiting 4 seconds or when the user
+  hovers over the placeholder.
+</p>
+@defer {
+  <app-lazy-loaded name="you"></app-lazy-loaded>
+} @placeholder (minimum 1000) {
+  <span>Placeholder content</span>
+} @loading (after 50; minimum 500) {
+  <span>Loading deferred content...</span>
+} @error {
+  <span>Error loading deferred content</span>
+}

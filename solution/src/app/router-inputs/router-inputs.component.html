@@ -1,0 +1,11 @@
+<h1 class="title">Router inputs</h1>
+<p class="explanation">
+  Rewrite this component to use router inputs binding instead of getting the
+  router params from the activated route.
+</p>
+<p>click on on item to show it's index</p>
+@for (item of items; track $index) {
+  <div>
+    <a [routerLink]="['item-details', $index.toString()]">{{ item }}</a>
+  </div>
+}
